@@ -209,15 +209,15 @@ Practice accessing data above by console.log-ing following items:
 (1) Name of the first artist (0th index) in the array
 (2) Bio of the third artist (2nd index) in the array */
 
-console.log(Artists.name[0]);
-console.log(Artists.bio[2]);
+console.log(artists[0].name);
+console.log(artists[2].bio);
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 2: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 
 There is a typo in your dataset 😱 The 9th artist, Vincent Van Gogh is currently Vincent Van Dough. Use an array method to fix this issue and console.log() to check your work. */
 
-console.log("Before update: ", artists[8])
-artists[8].name = "Vincent Van Gogh"
-console.log("After update: ", artists[8])
+console.log("Before update: ", artists[8]);
+artists[8].name = "Vincent Van Gogh";
+console.log("After update: ", artists[8]);
 
 
 
@@ -291,21 +291,22 @@ bio: Add 1-2 sentences (or use lorem ipsum)
 
 At the end, this function should return the new array with information added"*/
 
-const twentyOne = {
-  id: 20,
-  name: 'Deisy Monsalve',
-  years: "1987-2020",
-  genre: "Web Design",
-  nationality: "Colombia",
-  bio: "lorem ipsum"
-  }
 
 
-  function addArtist(arr, obj){
-     arr.push(obj);
+  function addArtist(arr){
+    const twentyOne = {
+      id: 20,
+      name: 'Deisy Monsalve',
+      years: "1987-2020",
+      genre: "Web Design",
+      nationality: "Colombia",
+      bio: "lorem ipsum"
+      }
+     arr.push(twentyOne);
      return arr;
+    
   }
-  console.log(addArtist(artists, twentyOne));
+  console.log(addArtist(artists));
 
   
 
@@ -321,11 +322,11 @@ For example lotsOfArt(artists); will return ["Amedeo Modigliani", "Rene Magritte
 function lotsOfArt(array){
 
   let finalArray = []
-  array.forEach(fubar => {
-    if (fubar.paintings >= 100){
-      finalArray.push(fubar.name)
-    }
-  })
+ for(let i = 0; i < array.length; i++){
+   if(array[i.paintings > 100]){
+    finalArray.push(array[i].name)
+   }
+ }
   return finalArray;
 }
 
@@ -392,3 +393,4 @@ export default{
   addArtist,
   lotsOfArt
 }
+
